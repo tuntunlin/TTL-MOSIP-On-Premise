@@ -104,3 +104,70 @@ MOSIP cluster ကို production environment တွင်အသုံးပြ
 - Regular backup schedule
 - Security audit
 - Performance benchmarking
+
+
+1. Prerequisite Components
+Kubernetes Cluster Dependencies
+
+    Ingress Controller (Nginx, Traefik, etc.)
+
+    Cert Manager (TLS certificates management အတွက်)
+
+    External DNS (optional, external DNS records management အတွက်)
+
+Storage
+
+    Persistent Volume Provisioner (Rook Ceph, Longhorn, သို့မဟုတ် cloud provider specific storage class)
+
+Monitoring
+
+    Prometheus Operator (monitoring stack အတွက်)
+
+    Grafana (visualization အတွက်)
+
+2. MOSIP Core Dependencies
+Database Layer
+
+    PostgreSQL (သို့မဟုတ် cloud managed database service)
+
+    Keycloak (identity and access management အတွက်)
+
+Messaging
+
+    Kafka (event streaming platform)
+
+    Zookeeper (Kafka အတွက် coordination service)
+
+Cache
+
+    Redis (caching layer အတွက်)
+
+3. MOSIP Core Modules (အစဉ်လိုက်)
+
+    Config Server - MOSIP configuration management
+
+    Kernel Services - Core utility services
+
+    Registration Processor - Registration data processing
+
+    ID Repository - Biometric and demographic data storage
+
+    ID Authentication - Authentication services
+
+    Partner Management - Partner onboarding and management
+
+    Admin Services - System administration
+
+4. Deployment အဆင့်ဆင့်
+
+    Prerequisite Helm charts တင်ပါ
+
+    MOSIP custom Helm charts တင်ပါ
+
+    Configuration values များကို override လုပ်ပါ
+
+    Namespace များ create လုပ်ပါ
+
+    Core modules များကို dependency order အလိုက် deploy လုပ်ပါ
+
+MOSIP deployment သည် ရှုပ်ထွေးသော process တစ်ခုဖြစ်ပြီး environment ပေါ်မူတည်၍ ကွဲပြားမှုများ ရှိနိုင်ပါသည်။ MOSIP official documentation တွင် အတိအကျသော deployment guide များကို ရှာဖွေဖတ်ရှုသင့်ပါသည်။
