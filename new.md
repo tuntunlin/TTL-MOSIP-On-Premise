@@ -33,4 +33,8 @@ ssh-copy-id worker1@172.16.10.117
 ssh-copy-id worker2@172.16.10.118
 
 ### 6. Create a hosts.ini. Update the IP addresses
+node1 ansible_host=172.16.10.117 ansible_user=test1 ansible_sudo_pass=test
+node2 ansible_host=172.16.10.118 ansible_user=test2 ansible_sudo_pass=test
 
+### 7.
+ansible-playbook -i hosts.ini ports.yaml
