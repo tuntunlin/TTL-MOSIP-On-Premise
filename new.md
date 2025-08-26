@@ -19,9 +19,12 @@ sudo add-apt-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible
 ```
 
-
+### 3. Install RKE
 sudo apt-get update && sudo apt-get upgrade -y
 wget https://github.com/rancher/rke/releases/download/v1.4.8/rke_linux-amd64
 chmod +x rke_linux-amd64
 sudo mv rke_linux-amd64 /usr/local/bin/rke
 rke --version
+
+
+### Set up passwordless SSH.
