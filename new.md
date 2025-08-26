@@ -39,5 +39,7 @@ node2 ansible_host=172.16.10.118 ansible_user=test2 ansible_sudo_pass=test
 ### 7.
 ansible-playbook -i hosts.ini ports.yaml
 ansible-playbook -i hosts.ini swap.yaml
+ansible-playbook -i hosts.ini docker.yaml
 
-
+rke config
+rek up --config cluster.yml
