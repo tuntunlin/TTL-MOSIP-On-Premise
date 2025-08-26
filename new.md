@@ -19,7 +19,7 @@ sudo add-apt-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible
 ```
 
-### 3. Install RKE
+### 4. Install RKE
 sudo apt-get update && sudo apt-get upgrade -y
 wget https://github.com/rancher/rke/releases/download/v1.4.8/rke_linux-amd64
 chmod +x rke_linux-amd64
@@ -27,4 +27,10 @@ sudo mv rke_linux-amd64 /usr/local/bin/rke
 rke --version
 
 
-### Set up passwordless SSH.
+### 5.Set up passwordless SSH. for K8S Infra
+ssh-keygen -t rsa
+ssh-copy-id worker1@172.16.10.117
+ssh-copy-id worker2@172.16.10.118
+
+### 6. Create a hosts.ini. Update the IP addresses
+
