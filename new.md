@@ -43,3 +43,6 @@ ansible-playbook -i hosts.ini docker.yaml
 
 rke config
 rek up --config cluster.yml
+
+
+
